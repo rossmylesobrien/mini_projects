@@ -78,6 +78,10 @@ h2{
   visibility: hidden;
 }
 
+.form-control.error small {
+  visibility: visible;
+}
+
 .form button {
   cursor: pointer;
   background-color: #3498db;
