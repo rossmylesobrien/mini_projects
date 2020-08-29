@@ -69,8 +69,13 @@ p{
 
 .swap-rate-container{
   display: flex;
+  color: green;
   align-items: center;
   justify-content: space-between;
+}
+
+.btn{
+  color: green;
 }
 
 .rate{
