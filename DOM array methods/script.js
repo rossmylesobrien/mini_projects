@@ -42,10 +42,14 @@ function updateDom(providedData = data){
 };
 
 // Double money
+// So we pass in each obj from the array, one at a time.
+// Then, we unfurl the obj with the spread operator ...
+// Then, we update things with money: obj.money * 2
 function doubleMoney(){
-    data = data.map(user => {
-      return {...user, money: user.money * 2}
+    data = data.map(obj => {
+      return {...obj, money: obj.money * 2}
     });
+    console.log(data);
     updateDom();
 };
 
