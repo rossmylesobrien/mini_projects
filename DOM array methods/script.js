@@ -53,6 +53,12 @@ function doubleMoney(){
     updateDom();
 };
 
+// Sort by Richest
+function sortByRichest(){
+  data.sort((a,b) => b.money - a.money);
+  updateDom();
+}
+
 // Format number as money
 function formatMoney(number){
   return '$' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
@@ -60,5 +66,5 @@ function formatMoney(number){
 
 // Event listeners
 addUserBtn.addEventListener('click', getRandomUser);
-
 doubleBtn.addEventListener('click', doubleMoney);
+sortBtn.addEventListener('click', sortByRichest);
