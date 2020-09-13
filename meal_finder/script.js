@@ -1,4 +1,5 @@
 // New way of writing selectors
+// Intermediate project here
 
 const search = document.getElementById('search'),
 submit = document.getElementById('submit'),
