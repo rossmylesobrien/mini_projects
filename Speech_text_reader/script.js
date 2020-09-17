@@ -62,7 +62,7 @@ data.forEach(createBox);
 function createBox(item){
     const box = document.createElement('div');
 
-    const {image, text} = item; // Destructuring
+    const {image, text} = item; // Destructuring item to image and text, so we get access to item.image and item.text
 
     box.classList.add('box');
     box.innerHTML = `
