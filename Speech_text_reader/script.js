@@ -71,8 +71,20 @@ function createBox(item){
     `;
 
     // To Do: Speak event
+    box.addEventListener('click', () => {
+      setTextMessage(text);
+      speakText();
+
+      // Add active effect
+      box.classList.add('active');
+      setTimeout(() => box.classList.remove('active'), 800);
+    });
+
     main.appendChild(box);
 }
+
+// Init speech synthesis
+const message = new SpeechSynthesisUtterance();
 
 // Store voices
 let voices = [];
@@ -89,11 +101,20 @@ function getVoices(){
   });
 }
 
+// Set text
+function setTextMessage(text) {
+  message.text = text;
+}
+
+// Speak text
+function speakText() {
+  speechSynthesis.speak(message);
+}
+
 // Voices changed
 speechSynthesis.addEventListener('voiceschanged', getVoices);
 
 // Add the toggle text box
-
 toggleBtn.addEventListener('click', () => document.getElementById('text-box').classList.toggle('show'));
 
 // Close button
