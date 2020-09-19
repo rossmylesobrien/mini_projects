@@ -22,7 +22,7 @@ let dragStartIndex;
 function createList(){
     [...richestPeople]
     .map(a => ({value: a, sort: Math.random()}))
-    .sort((a, b) => a.sort - b.sort)
+    .sort((a, b) => a.sort - b.sort) // https://forum.freecodecamp.org/t/arr-sort-a-b-a-b-explanation/167677
     .map(a => a.value)
     .forEach((person, index) => {
       console.log(person);
@@ -37,7 +37,6 @@ function createList(){
       `;
 
       listItems.push(listItem);
-
       draggable_list.appendChild(listItem);
     });
 };
