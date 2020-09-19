@@ -50,6 +50,25 @@ function showLoading(){
 
 }
 
+// Filter posts by input
+function filterPosts(e){
+
+     const term = e.target.value.toUpperCase(); // We can get what was typed with e.target.value
+     const posts = document.querySelectorAll('.post');
+
+     posts.forEach(post => {
+       const title = post.querySelector('.post-title').innerText.toUpperCase();
+       const body = post.querySelector('.post-body').innerText.toUpperCase();
+
+      if(title.indexOf(term) > -1 || body.indexOf(term) > -1){
+          post.style.display = 'flex';
+      }else{
+        post.style.display = 'none';
+      }
+
+     })
+};
+
 // Add event listener on window
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement; // Destructuring allows us to get the variables from an object.
@@ -58,3 +77,5 @@ window.addEventListener('scroll', () => {
     showLoading();
   }
 });
+
+filter.addEventListener('input', filterPosts)
