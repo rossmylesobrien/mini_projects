@@ -41,6 +41,34 @@ let score = 0;
 // Init time
 let time = 10;
 
+// Generate random word from array
 function getRandomWord(){
   return words[Math.floor(Math.random() * words.length)];
-}
+};
+
+// Add word to DOM
+function addWordToDOM(){
+  randomWord = getRandomWord();
+  word.innerHTML = randomWord;
+};
+
+// Update score
+function updateScore(){
+    score++;
+    scoreEl.innerHTML = score;
+};
+
+addWordToDOM();
+
+// Event listeners
+text.addEventListener('input', e => {
+  const insertedText = e.target.value;
+
+  if(insertedText === randomWord){
+      addWordToDOM();
+      updateScore();
+      
+      // Clear the box
+      e.target.value = '';
+  }
+});
