@@ -44,8 +44,11 @@ let time = 10;
 // Focus on text on start
 text.focus();
 
-// Set the difficulty
+// Set the difficulty ti the value in local storage or medium
 let difficulty = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'medium';
+
+// set the difficulty value
+difficultySelect.value = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'medium';
 
 // Start counting down
 const timeInterval = setInterval(updateTime, 1000);
@@ -106,7 +109,13 @@ text.addEventListener('input', e => {
       // Clear the box
       e.target.value = '';
 
-      time += 5;
+      if(difficulty === 'hard'){
+        time += 2;
+      }else if(difficulty === 'medium'){
+        time += 3;
+      }else{
+        time += 5;
+      }
 
       updateTime();
   }
@@ -118,5 +127,5 @@ settingsBtn.addEventListener('click', () => settings.classList.toggle('hide'));
 // Settings select
 settingsForm.addEventListener('change', e => {
   difficulty = e.target.value;
-  localStorage.setItem('difficulty', difficulty);
+  localStorage.setItem('difficulty', difficulty); // We're just calling it 'difficulty' in the applications section of Google Chrome
 });
