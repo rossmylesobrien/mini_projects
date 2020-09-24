@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: #f7f7f7;
   display: flex;
   flex-direction: column;
@@ -19,28 +19,28 @@ body{
   font-family: 'Lato', sans-serif;
 }
 
-.container{
+.container {
   margin: 30px auto;
   width: 350px;
 }
 
-h1{
+h1 {
   letter-spacing: 1px;
   margin: 0;
 }
 
-h3{
+h3 {
   border-bottom: 1px solid #bbb;
   padding-bottom: 10px;
   margin: 40px 0 10px;
 }
 
-h4{
+h4 {
   margin: 0;
   text-transform: uppercase;
 }
 
-.inc-exp-container{
+.inc-exp-container {
   background-color: #fff;
   box-shadow: var(--box-shadow);
   padding: 20px;
@@ -49,35 +49,36 @@ h4{
   margin: 20px 0;
 }
 
-.inc-exp-container > div{
+.inc-exp-container > div {
   flex: 1;
   text-align: center;
 }
 
-.inc-exp-container > div:first-of-type{
+.inc-exp-container > div:first-of-type {
   border-right: 1px solid #dedede;
 }
 
-.money{
+.money {
   font-size: 20px;
   letter-spacing: 1px;
   margin: 5px 0;
 }
 
-.money.plus{
+.money.plus {
   color: #2ecc71;
 }
 
-.money.minus{
+.money.minus {
   color: #c0392b;
 }
 
-labels{
+label {
   display: inline-block;
   margin: 10px 0;
 }
 
-input[type="text"]. input[type="number"]{
+input[type='text'],
+input[type='number'] {
   border: 1px solid #dedede;
   border-radius: 2px;
   display: block;
@@ -86,7 +87,7 @@ input[type="text"]. input[type="number"]{
   width: 100%;
 }
 
-.btn{
+.btn {
   cursor: pointer;
   background-color: #9c88ff;
   box-shadow: var(--box-shadow);
@@ -99,17 +100,18 @@ input[type="text"]. input[type="number"]{
   width: 100%;
 }
 
-.btn:focus, .delete-btn:focus{
-    outline: 0;
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
 }
 
-.li{
+.list {
   list-style-type: none;
   padding: 0;
   margin-bottom: 40px;
 }
 
-.list li{
+.list li {
   background-color: #fff;
   box-shadow: var(--box-shadow);
   color: #333;
@@ -120,15 +122,15 @@ input[type="text"]. input[type="number"]{
   margin: 10px 0;
 }
 
-.list li.minus{
+.list li.plus {
+  border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
   border-right: 5px solid #c0392b;
 }
 
-.list li.plus{
-  border-right: 5px solid ##2ecc71;
-}
-
-.delete-btn{
+.delete-btn {
   cursor: pointer;
   background-color: #e74c3c;
   border: 0;
@@ -144,6 +146,6 @@ input[type="text"]. input[type="number"]{
   transition: opacity 0.3s ease;
 }
 
-.list li:hover .delete-btn{
+.list li:hover .delete-btn {
   opacity: 1;
 }
