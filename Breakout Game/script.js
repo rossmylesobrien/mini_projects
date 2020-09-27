@@ -100,12 +100,63 @@ function drawPaddle(){
 
 // Draw everything
 function draw(){
+  // Clear canvas
+  ctx.clearRect(0,0,canvas.width, canvas.height);
+
     drawBall();
     drawPaddle();
     drawScore();
     drawBricks();
 }
-draw();
+
+// Move the paddle on canvas
+function movePaddle(){
+  paddle.x += paddle.dx;
+
+  // Wall detection
+  if(paddle.x + paddle.w > canvas.width){
+      paddle.x = canvas.width - paddle.w;
+  }
+
+  if(paddle.x < 0){
+      paddle.x = 0;
+  }
+};
+
+// Update canvas drawing and animation
+function update(){
+
+  // Draw everything
+  movePaddle();
+  draw();
+  requestAnimationFrame(update);
+}
+
+update();
+
+// Keydown
+function keyDown(e){
+  if(e.key === 'Right' || e.key === 'ArrowRight'){
+      paddle.dx = paddle.speed;
+  }else if(e.key === 'Left' || e.key === 'ArrowLeft'){
+    paddle.dx = -paddle.speed;
+  }
+}
+
+// Keyup
+function keyUp(e){
+  if(e.key === 'Right' ||
+     e.key === 'ArrowRight' ||
+     e.key === 'Left' ||
+     e.key === 'ArrowLeft' ){
+      paddle.dx = 0;
+  }
+};
+
+// Keyboard event handlers
+document.addEventListener('keydown', keyDown);
+document.addEventListener('keyup', keyUp);
+
 
 // Draw score on canvas
 function drawScore(){
